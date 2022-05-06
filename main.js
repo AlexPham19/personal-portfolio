@@ -12,3 +12,20 @@ updateList();
 window.addEventListener('scroll', () => {
     updateList();
 })
+
+
+function openNav() {
+	document.getElementById("Sidebar").style.visibility = "visible";
+	console.log("success?");
+}
+  
+function closeNav() {
+	document.getElementById("Sidebar").style.visibility = "none";
+}
+
+function shouldOpenOrClose(){
+	if(document.getElementById("Sidebar").style.visibility == "none")
+		openNav();
+	else
+		closeNav();
+}

@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
 	<script src="https://kit.fontawesome.com/7e0333b8c9.js" crossorigin="anonymous"></script>
 
 </head>
@@ -24,14 +26,45 @@
 				<a href="#projects" class="hover:text-selected-text">Projects</a>
                 <a href="#contact-me"><button class="rounded-md px-6 py-2 bg-theme font-bold">Contact me</button></a>
 			</div>
+<!-- TODO: Make a side bar, lúc ấn thì kéo xuống-->			
 			<!-- should make a side bar -->
-            <div class="md:hidden">
-                <a href="#">
-					<i class="fa-solid fa-bars"></i>
+            <div class="md:hidden text-white">
+                <a href="javascript:void(0)">
+					<i class="fa-solid fa-bars" onclick="shouldOpenOrClose()"></i>
 				</a>
-				
             </div>
         </div>
+		<aside class="hidden text-white flex justify-end items-end" id="Sidebar">
+			<div class="overflow-y-auto py-4 px-3 rounded bg-body text-white">
+			   <ul class="space-y-2">
+				  <li>
+					 <a href="#" class="flex items-center p-2 font-normal rounded-lg hover:text-selected-text">
+						Home
+					 </a>
+				  </li>
+				  <li>
+					 <a href="#education" class="flex items-center p-2 font-normal rounded-lg hover:text-selected-text">
+						Education
+					 </a>
+				  </li>
+				  <li>
+					 <a href="#work-experience" class="flex items-center p-2 font-normal rounded-lg hover:text-selected-text">
+						Work Experience
+					 </a>
+				  </li>
+				  <li>
+					<a href="#projects" class="flex items-center p-2 font-normal rounded-lg hover:text-selected-text">
+					   Projects
+					</a>
+				 </li>
+				 <li>
+					<a href="#contact-me" class="flex items-center p-2 font-normal rounded-lg hover:text-selected-text">
+					   Contact me!
+					</a>
+				 </li>
+			   </ul>
+			</div>
+		 </aside>
     </header>
 
 
@@ -40,6 +73,8 @@
 
             <nav class="inline-block lg:mr-24 lg:w-4 fixed left-percentage hidden xl:block">
                 <div class="absolute left-50 transform -translate-x-1/2 space-y-6 mt-36">
+
+<!-- TODO: -->	<!-- Sẽ phải chỉnh phần này, vì nó không responsive và không update mỗi lần xuống phần khác nhau -->
 					<a href="#" class="nav-dot selected-circle block w-7 h-7 rounded-full border-4 border-nav bg-body">
 						<span class="bg-black px-2 py-1 rounded-md ml-10 opacity-0">Home</span>
 					</a>
@@ -90,7 +125,7 @@
 				<div class="w-full border border-nav p-16 lg:px-32 lg:py-16 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap">
 					
 					<!-- Client picture -->
-					<img width="300" height="100" src="img/logo_uc.png">
+					<img width="300" height="100" class="object-fill" src="img/logo_uc.png">
 
 					<!-- Client info -->
 					<div class="flex flex-wrap justify-center text-center lg:text-left lg:block">
@@ -144,7 +179,7 @@
 				<div class="w-full border border-nav p-16 lg:px-32 lg:py-20 lg:space-x-32 flex justify-center lg:justify-start flex-wrap lg:flex-nowrap">
 					
 					<!-- Client picture -->
-					<img width="800" height="50" src="img/logo_learn21.png">
+					<img class="object-none" src="img/logo_learn21.png">
 
 					<!-- Client info -->
 					<div class="flex flex-wrap justify-center text-center lg:text-left lg:block">
@@ -195,34 +230,39 @@
 				<h2 id="projects" class="secondary-title">My Projects</h2>
 				<p class="section-paragraph">Lorem ipsum ofrmdr damre tmamd e nand xme amxmenb dmam</p>
 
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-6">
 					<div class="w-full bg-nav object-cover rounded-lg">
-						<img src="img/exercise-timer-app.png" class="w-full bg-nav object-cover">
+						<img src="img/exercise-timer-app-home.jpg" class="w-auto h-auto bg-nav object-cover">
 						<div class="center">
 							<b class="center justify-between items-center">Exercise Timer App</b>
 							<h6 class="justify-between items-center">This is the first app of building Android applications</h6>
-							<div class="container flex justify-between items-center px-36">
-								<img width="32" height="32" src="img/dart.svg">
-								<img width="32" height="32" src="img/dart.svg">
-								<img width="32" height="32" src="img/dart.svg">
-								<img width="32" height="32" src="img/dart.svg">
+							<div class="container flex justify-evenly items-center">
+								<img width="60" height="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart"/>
+								<img width="60" height="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"/>
+								<img width="60" height="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="Android Studio"/>
+							</div>
+							<a href="#contact-me"><button class="rounded-md px-6 py-2 bg-theme font-bold">Github page</button></a>
+						</div>
+					</div>
+					<div class="w-full bg-nav h-50 object-cover rounded-lg">
+						<img src="img/online-class-website.png" class="w-full bg-nav h-36 lg:h-72 object-cover">
+						<div>
+							<b class="center justify-between items-center">Online Class Website</b>
+							<h6 class="justify-between items-center">This is the first app of building Android applications</h6>
+							<div class="container flex justify-evenly items-center">
+								<img width="60" height="60" alt="HTML5" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+								<img width="60" height="60" alt="CSS3" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+								<img width="60" height="60" alt="JavaScript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
 							</div>
 						</div>
 					</div>
-					<div class="w-full bg-nav h-50 object-cover rounded-lg">
+					<!-- <div class="w-full bg-nav h-50 object-cover rounded-lg">
 						<img src="https://images.unsplash.com/photo-1576153192396-180ecef2a715?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" class="w-full bg-nav h-36 lg:h-72 object-cover">
 						<div>
 							<b class="center justify-between items-center">Exercise Timer App</b>
 							<h6 class="justify-between items-center">This is the first app of building Android applications</h6>
 						</div>
-					</div>
-					<div class="w-full bg-nav h-50 object-cover rounded-lg">
-						<img src="https://images.unsplash.com/photo-1576153192396-180ecef2a715?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" class="w-full bg-nav h-36 lg:h-72 object-cover">
-						<div>
-							<b class="center justify-between items-center">Exercise Timer App</b>
-							<h6 class="justify-between items-center">This is the first app of building Android applications</h6>
-						</div>
-					</div>
+					</div> -->
 				</div>
 			</section>
 		</div>
@@ -268,6 +308,50 @@
 
 			</section>
 		</div> 
+
+		<footer class="bg-body w-full mt-20">
+			<div class="bg-body container flex justify-evenly items-center py-6">
+				<div class="md:flex space-x-12 justify-between items-center">
+					<a href="#" class="hover:text-selected-text">Home</a>
+					<a href="#education" class="hover:text-selected-text">Education</a>
+					<a href="#work-experience" class="hover:text-selected-text">Work Experiences</a>
+					<a href="#projects" class="hover:text-selected-text">Projects</a>
+					<a href="#conact-me" class="hover:text-selected-text">Contact</a>
+				</div>
+			</div>
+
+			<p class="content-center container flex justify-center mb-10">© 2022 Quan Pham</p>
+		</footer>
+		<!-- <footer class="Footer_footer__xfMMF">
+			<nav class="Footer_nav__A_VwG">
+				<ul class="Footer_list__psolo">
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#about">About</a>
+					</li>
+					<li>
+						<a href="#projects">Projects</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="Footer_socials__U3wtj">
+				<ul>
+					<li>
+						<a href="https://github.com/bhuynhdev" target="_blank" rel="noopener noreferrer">
+							<span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:30px;height:30px;background:none;opacity:1;border:0;margin:0;padding:0;position:relative">
+								<img alt="Github icon" srcset="/icons/github.svg 1x, /icons/github.svg 2x" src="/icons/github.svg" decoding="async" data-nimg="fixed" class="Icon_socialIcon__Qzc5t" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></a></li><li><a href="https://www.linkedin.com/in/baohuynhuc/" target="_blank" rel="noopener noreferrer"><span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:30px;height:30px;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><img alt="LinkedIn icon" srcset="/icons/linkedin.svg 1x, /icons/linkedin.svg 2x" src="/icons/linkedin.svg" decoding="async" data-nimg="fixed" class="Icon_socialIcon__Qzc5t" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></a></li><li><a href="https://www.instagram.com/unflinch_camel/" target="_blank" rel="noopener noreferrer"><span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:30px;height:30px;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><img alt="Instagram icon" srcset="/icons/instagram.svg 1x, /icons/instagram.svg 2x" src="/icons/instagram.svg" decoding="async" data-nimg="fixed" class="Icon_socialIcon__Qzc5t" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"></span></a></li><li><a href="https://twitter.com/bhuynhtweet" target="_blank" rel="noopener noreferrer"><span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:30px;height:30px;background:none;opacity:1;border:0;margin:0;padding:0;position:relative"><img alt="Twitter icon" srcset="/icons/twitter.svg 1x, /icons/twitter.svg 2x" src="/icons/twitter.svg" decoding="async" data-nimg="fixed" class="Icon_socialIcon__Qzc5t" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%">
+							</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<p>© 2022 Bao Huynh</p>
+		</footer> -->
 
         <script src="main.js"></script>
 
