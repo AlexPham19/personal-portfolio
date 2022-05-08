@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-#Sidebar{
-    visibility: hidden;
-}
-aside{
-    visibility: hidden;
-}
-
 html, body {
     scroll-behavior: smooth;
 }
@@ -22,6 +15,7 @@ html, body {
 .top-50 {
     top: 50%;
 }
+
 
 
 .-z-1 {
